@@ -1,0 +1,23 @@
+{
+  "name": "міні-збарка для статичних сайтів від Кодимо солов'їною",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-postcss": "^1.1.0",
+    "@vituum/vite-plugin-posthtml": "^1.1.0",
+    "npm": "^10.6.0",
+    "posthtml-expressions": "^1.11.4",
+    "posthtml-include": "^2.0.1",
+    "sass": "^1.97.2",
+    "vite": "^5.2.0",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-html-inject": "^1.1.2",
+    "vituum": "^1.1.0"
+  }
+}

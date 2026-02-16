@@ -1,0 +1,121 @@
+@use "../../../../styles/mixins" as *;
+
+.feedback {
+padding-block: 80px 60px;
+@include size('padding-top', 80, 35);
+@include size('padding-top', 60, 35);
+  &_inner {
+    display: grid;
+    grid-template-columns: 300px 860px;
+    @include rmax($xl) {
+        grid-template-columns: 1fr;
+    }
+  }
+
+  .content {
+    @include rmax($xl) {
+      margin-inline: auto;
+      text-align: center;
+    }
+  }
+
+  .title {
+    margin-bottom: 35px;
+    @include rmax($xl) {
+      &::before {
+      margin-inline: auto;
+      }
+    }
+  } 
+
+  .slider-actions {
+    display: flex;
+    gap: 12px;
+    @include rmax($xl) {
+      justify-content: center;
+      margin-inline: auto;
+    }
+  }
+
+  .slider-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition: 0.3s ease-in-out;
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 10px;
+      mask-image: var(--icon-prev);
+      @include mask-contain;
+      background-color: currentColor;
+    }
+
+    &--next {
+      &::before {
+        transform: scaleX(-1);
+      }
+    }
+
+    &[disabled] {
+      color: var(--c-gray);
+      pointer-events: none;
+    }
+
+    &:focus{
+        outline-color: var(--c-pink);
+        outline-offset: 3px;
+    }
+
+    @include hover {
+      color: var(--c-pink);
+    }
+  }
+
+  .slider{
+    padding-block: 30px;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper{
+    box-sizing: border-box !important;
+  }
+
+  .swiper-slide{
+    box-sizing: border-box !important;
+    width: fit-content !important;
+  }
+}
+
+
+.feedback-card {
+    max-width: 430px;
+    padding: 55px;
+
+    &_body{
+margin-bottom: 20px;
+    }
+
+    &_footer{
+display: flex;
+align-items: center;
+gap: 16px;
+    }
+
+    &_title{
+font-weight: 500;
+    }
+
+    &_info{
+font-size: 12px;
+font-weight: 300;
+color: var(--c-gray);
+    } 
+}

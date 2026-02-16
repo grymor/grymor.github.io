@@ -1,0 +1,22 @@
+@use './hero/hero.scss';
+@use './about/about.scss';
+@use './rental/rental.scss';
+@use './choose/choose.scss';
+@use './why/why.scss';
+@use './feedback/feedback.scss';
+@use './request/request.scss';
+
+.home-page{
+
+    .header{
+        
+        background-color: transparent;
+    
+        
+
+
+    &.scrolled {
+        background-color: var(--c-dark);
+    }
+    }
+}

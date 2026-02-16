@@ -1,0 +1,114 @@
+@use "../../../styles/mixins/"as*;
+
+.footer {
+    background-image: url('/src/assets/images/footer-bg.webp');
+    @include bg-cover;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--c-white);
+
+    &_grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+
+        @include rmax($lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include rmax($sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+
+.footer-title {
+font-weight: 500;
+font-size: 18px;
+line-height: 32px;
+color: var(--c-white);
+text-transform: uppercase;
+margin-bottom: 24px;
+}
+
+.footer-details {
+    .logo {
+        display: block;
+        margin-bottom: 34px;
+    }
+    &_text {
+        margin-bottom: 20px;
+    }
+}
+.insta-blog {
+    &_list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+
+.contacts {
+    &_list {
+    li{
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+    }
+}
+    &_link {
+        transition: ease-in-out 0.3s;
+        @include hover{
+            color: var(--c-pink);
+        }
+    }
+}
+
+
+.subscribe-form {
+    margin-bottom: 20px;
+    &_group {
+display: flex;
+align-items: center;
+border-radius: 6px;
+border: 1px solid rgba(#fff, 0.6);
+
+}
+
+&_input{
+    width: 100%;
+    padding: 18px;
+    outline: 0;
+    color: var(--c-white);
+}
+&_btn {
+    width: 60px;
+    height: 50px;
+padding: 18px 20px;
+mask-image: var(--icon-email);
+mask-repeat: no-repeat;
+mask-size: 24px;
+mask-position: center;
+background-color: var(--c-white);
+transition: background-color 0.3s ease-in-out;
+    @include hover{
+        background-color: var(--c-pink);
+    }
+}
+
+.copy {
+    padding-top: 40px;
+    font-size: 12px;
+    color: var(--c-lightgray);
+}
+}
